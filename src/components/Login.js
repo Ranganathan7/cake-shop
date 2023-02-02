@@ -29,7 +29,8 @@ function Login() {
         axios({
             url: "https://apifromashu.herokuapp.com/api/login",
             method: "post",
-            data: user
+            data: user,
+            withCredentials: true
         }).then((response) => {
             setLoading(false)    
             if(response.data.message) setMsg(response.data.message)

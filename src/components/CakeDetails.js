@@ -18,7 +18,8 @@ function CakeDetails() {
     if (!localStorage.isLoggedIn) navigate("/cakes")
     axios(({
       method: "get",
-      url: "https://apifromashu.herokuapp.com/api/cake/" + params.cakeid
+      url: "https://apifromashu.herokuapp.com/api/cake/" + params.cakeid,
+      withCredentials: true
     })).then((response) => {
       setCake(response.data.data)
     }, (error) => { console.log(error) })
@@ -41,7 +42,8 @@ function CakeDetails() {
         data: requestobj,
         headers: {
           Authorization: localStorage.token
-        }
+        },
+        withCredentials: true
       }).then((response) => {
         setLoading(false)
         if (response.data.data) {

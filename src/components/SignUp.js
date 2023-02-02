@@ -27,7 +27,8 @@ function SignUp(){
         axios({
             url: "https://apifromashu.herokuapp.com/api/register",
             method: "post",
-            data: user
+            data: user,
+            withCredentials: true
         }).then((response) => {
             // console.log("response from api is ", response.data)
             setMsg(response.data.message)

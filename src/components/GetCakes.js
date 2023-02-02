@@ -21,6 +21,7 @@ function GetCakes() {
             axios({
                 url: "https://apifromashu.herokuapp.com/api/allcakes",
                 method: "get",
+                withCredentials: true
             }).then((response) => {
                 setCakes(response.data.data)
                 dispatch({ type: "CAKES", cakes: response.data.data })

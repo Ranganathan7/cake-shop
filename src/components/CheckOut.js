@@ -24,7 +24,8 @@ function CheckOut(props) {
             method: "get",
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
             dispatch({type:"UPDATE_CAKES", cakes: response.data.data})
             setLoading(false)

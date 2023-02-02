@@ -21,7 +21,8 @@ function MyCart() {
             method: "get",
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
             dispatch({ type: "UPDATE_CAKES", cakes: response.data.data })
             setLoading(false)
@@ -39,7 +40,8 @@ function MyCart() {
                 method: "get",
                 headers: {
                     Authorization: localStorage.token
-                }
+                },
+                withCredentials: true
             }).then((response) => {
                 setLoading(false)
                 dispatch({ type: "UPDATE_CAKES", cakes: response.data.data })
@@ -71,7 +73,8 @@ function MyCart() {
             data: requestobj,
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
 
 
@@ -95,7 +98,8 @@ function MyCart() {
             data: { cakeid: cake.cakeid },
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
             // navigate to cart
             // navigate("/my-cart")
@@ -117,7 +121,8 @@ function MyCart() {
             data: { cakeid: cake.cakeid },
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
             // navigate to cart
             // navigate("/my-cart")

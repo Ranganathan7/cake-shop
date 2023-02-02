@@ -16,7 +16,8 @@ function MyOrders() {
             method: "get",
             headers: {
                 Authorization: localStorage.token
-            }
+            },
+            withCredentials: true
         }).then((response) => {
             setLoading(false)
             setOrders(response.data.cakeorders)

@@ -21,7 +21,8 @@ function SearchCakesResult() {
         setLoading(true)
         axios({
             method: "get",
-            url: "https://apifromashu.herokuapp.com/api/searchcakes?q=" + value
+            url: "https://apifromashu.herokuapp.com/api/searchcakes?q=" + value,
+            withCredentials: true
         }).then((response) => {
             // console.log("response from search cakes api" , response.data)
             setLoading(false)

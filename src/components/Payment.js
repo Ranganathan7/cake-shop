@@ -40,7 +40,8 @@ function Payment() {
             headers: {
                 Authorization: localStorage.token
             },
-            data: requestobj
+            data: requestobj,
+            withCredentials: true
         }).then((response) => {
             alert("ORDER PLACED SUCCESSFULLY")
             setLoading(false)
